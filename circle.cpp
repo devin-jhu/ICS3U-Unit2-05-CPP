@@ -2,24 +2,33 @@
 //
 // Created by Devin Jhu
 // Created on March 2022
-// The proper format "Hello, World!"
+// global and local functions
 
 #include <iostream>
 
+// global variable
+int variableX = 25;
+
+void localVariable() {
+    // this shows local variables
+    int variableX = 10;
+    int variableY = 30;
+    int variableZ = variableX + variableY;
+        std::cout << "Local variableX, variableY, variableZ: "
+            << variableX << "+" << variableY << "=" << variableZ << std::endl;
+}
+void globalVariable() {
+    // this shows global variables
+    variableX = variableX + 1;
+    int variableY = 30;
+    int variableZ = variableX + variableY;
+        std::cout << "Global variableX, variableY, variableZ: "
+            << variableX << "+" << variableY << "=" << variableZ << std::endl;
+}
+
+
 int main() {
-    // this function calculates circumference
-    const double TAU = 6.28;
-    int radius;
-    double circumference;
-
-    // input
-    std::cout << "enter radius (mm): ";
-    std::cin >> radius;
-
-    // process
-    circumference = TAU*radius;
-
-    // output
-    std::cout << "" << std::endl;
-    std::cout << "circumference is " << circumference << "mm" << std::endl;
+    // this function calls local and global
+    localVariable();
+    globalVariable();
 }
